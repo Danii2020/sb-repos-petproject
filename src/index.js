@@ -4,12 +4,17 @@ const API_URL = "https://api.github.com/orgs/stackbuilders/repos";
 
 // Fetch data from the GitHub API.
 const fetchData = async (api_url) => {
-    const response = await axios.get(api_url, {
-        headers:{
-            'Authorization': "token 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"
-        }
-    });
-    return response.data; 
+    try {
+        const response = await axios.get(api_url, {
+            headers:{
+                'Authorization': "token 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"
+            }
+        });
+        return response.data; 
+    } catch (err) {
+        console.error(err);
+    }
+    
 }
 
 // Get repos with Tail Recursion (I think).
