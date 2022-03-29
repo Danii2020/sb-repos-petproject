@@ -1,0 +1,22 @@
+{
+  "name": "petprojectrepos",
+  "version": "1.0.0",
+  "description": "This is the PetProject for the SB Inter Training module 3",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "keywords": [
+    "functional",
+    "programming",
+    "github",
+    "repos",
+    "unit",
+    "tests"
+  ],
+  "author": "Daniel Erazo",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
