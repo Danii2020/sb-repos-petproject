@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is the PetProject for the SB Inter Training module 3",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "node src/index.js"
   },

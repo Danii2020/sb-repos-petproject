@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 const API_URL = "https://api.github.com/orgs/stackbuilders/repos";
 
@@ -6,7 +6,7 @@ const API_URL = "https://api.github.com/orgs/stackbuilders/repos";
 const fetchData = async (api_url) => {
     const response = await axios.get(api_url, {
         headers:{
-            'Authorization': "token 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"
+            'Authorization': "token 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"
         }
     });
     return response.data; 
@@ -43,8 +43,8 @@ const getSumOfStars = (repos) => {
 }
 
 // Get the five last updated repos from the data retrieve before.
-// The easiest way is by sorting the repo by dates using sort and 
-// the date object (the date object is powerful).
+// The easiest way to do this is by sorting the repo by dates using sort and 
+// the date class (the date class is powerful).
 const getFiveLastUpdated = (repos) => {
     return repos.sort((a, b) => {
         return new Date(b.updated) - new Date(a.updated);
