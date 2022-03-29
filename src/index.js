@@ -7,7 +7,7 @@ const fetchData = async (api_url) => {
     try {
         const response = await axios.get(api_url, {
             headers:{
-                'Authorization': "token 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"
+                'Authorization': "token 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"
             }
         });
         return response.data; 
@@ -27,7 +27,7 @@ const getReposTR = async (url_api, pageNumber, repoData) => {
 }
 
 // Get repos by calling the tail recursive function above.
-const getRepos = async (url_api) => {
+export const getRepos = async (url_api) => {
     const reposArray = await getReposTR(url_api, 1, []);
     return reposArray.map(repo => ({
         name:repo.full_name.split("/")[1],
@@ -38,19 +38,19 @@ const getRepos = async (url_api) => {
 }
 
 // Get more than five stars from the data retrieve before.
-const getMoreThanFiveStars = (repos) => {
+export const getMoreThanFiveStars = (repos) => {
     return repos.filter(repo => repo.stars > 5);
 }
 
 // Get the sum of all stars from the data retrieve before.
-const getSumOfStars = (repos) => {
+export const getSumOfStars = (repos) => {
     return repos.reduce((sum, repo) => sum + repo.stars, 0);
 }
 
 // Get the five last updated repos from the data retrieve before.
 // The easiest way to do this is by sorting the repo by dates using sort and 
 // the date class (the date class is powerful).
-const getFiveLastUpdated = (repos) => {
+export const getFiveLastUpdated = (repos) => {
     return repos.sort((a, b) => {
         return new Date(b.updated) - new Date(a.updated);
     }).slice(0, 5);

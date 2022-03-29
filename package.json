@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "node src/index.js"
+    "test": "node src/index.js",
+    "test:app": "node app.js"
   },
   "keywords": [
     "functional",
