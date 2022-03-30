@@ -3,11 +3,7 @@ import axios from "axios";
 // Fetch data from the GitHub API.
 const fetchData = async (api_url) => {
     try {
-        const response = await axios.get(api_url, {
-            headers:{
-                'Authorization': "token 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"
-            }
-        });
+        const response = await axios.get(api_url);
         return response.data; 
     } catch (err) {
         console.error(err);
