@@ -19,4 +19,14 @@ const API_URL = "https://api.github.com/orgs/stackbuilders/repos";
     // Retrieve and store the last five updated repos.
     const fiveLastUpdatedRepos = getFiveLastUpdated(repos);
     writeFileSync('./data/five_last_updated_repos.json', JSON.stringify(fiveLastUpdatedRepos));
+
+    // Show the results in console.
+    console.log("Repos with more than five stars:\n");
+    console.log(moreThanFiveRepos);
+
+    console.log("Five last updated repos:\n");
+    console.log(fiveLastUpdatedRepos);
+
+    console.log("The sum of all stars in repos is:\n");
+    console.log(sumOfStars);
 })();
