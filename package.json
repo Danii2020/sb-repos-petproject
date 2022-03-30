@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "node src/index.js",
-    "test:app": "node app.js"
+    "app": "node app.js",
+    "test": "mocha"
   },
   "keywords": [
     "functional",
@@ -20,5 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
   }
 }
