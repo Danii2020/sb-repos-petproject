@@ -25,6 +25,7 @@ const getReposR = async (url_api, pageNumber, repoData) => {
 export const getRepos = async (url_api) => {
     const reposArray = await getReposR(url_api, 1, []);
     return reposArray.map(repo => ({
+        id:repo.id,
         name:repo.full_name.split("/")[1],
         url:repo.html_url,
         updated:repo.updated_at,

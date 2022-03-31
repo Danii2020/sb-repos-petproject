@@ -27,13 +27,26 @@ describe("getSumOfStars", () => {
 
 describe("getFiveLastUpdated", () => {
     context("when a repos object is taken as parameter", () => {
-        it ("return the last five updated repos", () => {
+        it ("returns the last five update repos with their ids", () => {
             const fiveUpdatedRepos = getFiveLastUpdated(allRepos);
-            const checkOrder = (repos) => repos.every((a,i) => {
-                return i === 0 || (new Date(a.updated)) <= (new Date(repos[i - 1].updated));
-            });
-            assert.equal(checkOrder(fiveUpdatedRepos), true);
+            const idsRepos = fiveUpdatedRepos.map(repo => repo.id);;
+            assert.deepEqual(idsRepos, [219633939, 475171575, 475098183, 298715571, 20001143]);
         });
     });
 });
+
+
+// This code is commented just as a reference.
+
+// describe("getFiveLastUpdated", () => {
+//     context("when a repos object is taken as parameter", () => {
+//         it ("return the last five updated repos", () => {
+//             const fiveUpdatedRepos = getFiveLastUpdated(allRepos);
+//             const checkOrder = (repos) => repos.every((a,i) => {
+//                 return i === 0 || (new Date(a.updated)) <= (new Date(repos[i - 1].updated));
+//             });
+//             assert.equal(checkOrder(fiveUpdatedRepos), true);
+//         });
+//     });
+// });
 
