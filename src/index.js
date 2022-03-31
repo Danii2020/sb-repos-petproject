@@ -20,7 +20,7 @@ const getReposR = async (url_api, pageNumber, repoData) => {
     return getReposR(url_api, pageNumber + 1, repoData.concat(fetchedRepos));
 }
 
-// Get repos by calling the tail recursive function above.
+// Get repos by calling the recursive function above.
 // Then transform into an JS object.
 export const getRepos = async (url_api) => {
     const reposArray = await getReposR(url_api, 1, []);
